@@ -13,3 +13,8 @@ You can find a small example dataset for your project in [data/examples](https:/
 #### Real data
 
 You will need to download real data for your project and process it into the same format as the example data. You can find the Pan-Cancer mutation counts originally used by Alexandrov, et al. (Nature, 2013) at [ftp://ftp.sanger.ac.uk/pub/cancer/AlexandrovEtAl](ftp://ftp.sanger.ac.uk/pub/cancer/AlexandrovEtAl).
+
+
+Progress:
+1. combine all 96-mutation-type mat file into one numpy matrix and output to a .npy file
+2. writing on the 6 steps pipeline, first test on the sample data provided by max
