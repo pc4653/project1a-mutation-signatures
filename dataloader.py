@@ -1,7 +1,9 @@
 import scipy.io as io
 import os
-
-root = '/home/pc4653/Documents/828P1/data/mutational_catalogs/'
+#This loads all mat files in exome and genome dataset, 
+#append the matrices and create final matrix with all 
+#the observations in column.
+root = 'data/mutational_catalogs/'
 flag = False
 root_folders = os.listdir(root)
 for folder in root_folders:
