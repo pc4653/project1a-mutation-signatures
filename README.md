@@ -17,4 +17,5 @@ You will need to download real data for your project and process it into the sam
 
 Progress:
 1. combine all 96-mutation-type mat file into one numpy matrix and output to a .npy file
-2. writing on the 6 steps pipeline, first test on the sample data provided by max
+2. writing on the 6 steps pipeline, first test on the sample data provided by Max
+![Alt text](/relative/path/to/result-1.jpg?raw=true "Optional Title")
