@@ -37,7 +37,7 @@ orig signature 4 has the highest similarity with extracted signature 0 with 0.80
 
 
 
-3. Seems like the bootstrapping part isn't helping with the result. Here is the result of skipping the bootstrapping part, just using NMF with random initialization. (since the "bootstrap" method uses every observation's distribution normalized as the "true" multinomial distribution, it possibly made a softmax approximation and made the most apparent mutation the only mutation.)
+3. Seems like the bootstrapping part isn't helping with the result. Here is the result of skipping the bootstrapping part, just using NMF with random initialization. (since the "bootstrap" method uses every observation's distribution normalized as the "true" multinomial distribution, it possibly caused a softmax approximation and made the most apparent mutation the only mutation.)
 
 ![Alt text](without_bootstrap.jpg?raw=true "Optional Title")
 
