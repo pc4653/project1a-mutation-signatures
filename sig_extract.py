@@ -54,16 +54,51 @@ def normalize(P, E):
 
 
 def iteration( M, sign_num):
-    
-    
-    M_bootstrap = bootstrap(M)
+    """
+    bootstrap and use NMF (multiplicative update version), random initiation, and 
+    normalize P 
+    """
+    #M_bootstrap = bootstrap(M)
     model = NMF(n_components = sign_num, solver = 'mu', max_iter = 10000000, init = 'random')
     #P = np.random.rand(len(M_bootstrap), sign_num)
     #E = np.random.rand(sign_num, len(M_bootstrap[0]))
-    P = model.fit_transform(M_bootstrap)
+    P = model.fit_transform(M)
     E = model.components_
     error = model.reconstruction_err_
     P , E = normalize(P, E)
     return P, error
 
+def cos_sim(vec1, vec2):
+    
+    """
+    Compute the similarity of 2 vectors
+    
+    """
+    if len(vec1) != len(vec2):
+        print 'dimension does not agree.'
+    numerator_sum = 0    
+    for i in range(len(vec1)):
+        numerator_sum = numerator_sum + vec1[i]*vec2[i]
+                                             
+    denom = np.linalg.norm(vec1) * np.linalg.norm(vec2)
+    
+    return numerator_sum/denom
+    
+    
+def avg_sil_width(cluster_vec, centroid):
+    
+    """
+    input a cluster of vectors and the average of that cluster, calculate the avg sil width with
+    consine similarity; 1.00 meaning all vectors are exactly the same
+    """
+    tot_dis = 0
+    for i in xrange(len(cluster_vec)):
+        cos_dis = cos_sim(cluster_vec[i], centroid)
+        tot_dis = tot_dis + cos_dis
+    return tot_dis/len(cluster_vec)
+    
 
+
+    
+    
+    
