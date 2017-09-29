@@ -24,11 +24,17 @@ Progress:
 
 update on average silhoutte width from this method:
 [0.99725215726847416, 0.99848950992710583, 0.9976778738015889, 0.99932513185526106, 0.44953848114122957]
+
 orig signature 0 has the highest similarity with extracted signature 1 with 0.919813771667
+
 orig signature 1 has the highest similarity with extracted signature 4 with 0.710527936681
+
 orig signature 2 has the highest similarity with extracted signature 3 with 0.896844557153
+
 orig signature 3 has the highest similarity with extracted signature 2 with 0.921147707168
+
 orig signature 4 has the highest similarity with extracted signature 0 with 0.800587169291
+
 
 
 3. Seems like the bootstrapping part isn't helping with the result. Here is the result of skipping the bootstrapping part, just using NMF with random initialization.
@@ -37,9 +43,15 @@ orig signature 4 has the highest similarity with extracted signature 0 with 0.80
 
 also attaching the average silhoutte width for each cluster and consine simlarity of the generating mutation type and extracted mutation type:
 average silhoutte width:
+
 [0.99858662755549643, 0.99767012215251183, 0.99683224927509451, 0.99906200467683937, 0.99017610283904545]
+
 orig signature 0 has the highest similarity with extracted signature 3 with 0.995844890677
+
 orig signature 1 has the highest similarity with extracted signature 4 with 0.99012718356
+
 orig signature 2 has the highest similarity with extracted signature 0 with 0.995805403673
+
 orig signature 3 has the highest similarity with extracted signature 2 with 0.993754773022
+
 orig signature 4 has the highest similarity with extracted signature 1 with 0.995061139948
