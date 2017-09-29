@@ -55,3 +55,15 @@ orig signature 2 has the highest similarity with extracted signature 0 with 0.99
 orig signature 3 has the highest similarity with extracted signature 2 with 0.993754773022
 
 orig signature 4 has the highest similarity with extracted signature 1 with 0.995061139948
+
+
+4. Collect stats on running on different assumed number of mutation signatures
+With Bootstrap
+
+![Alt text](with_bootstrap_stats.jpg?raw=true "Optional Title")
+
+Without Bootstrap
+
+![Alt text](without_bootstrap_afr.jpg?raw=true "Optional Title")
+
+![Alt text](without_bootstrap_asw.jpg?raw=true "Optional Title")
