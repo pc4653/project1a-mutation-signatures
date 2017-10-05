@@ -67,3 +67,30 @@ Without Bootstrap
 ![Alt text](without_bootstrap_afr.jpg?raw=true "Optional Title")
 
 ![Alt text](without_bootstrap_asw.jpg?raw=true "Optional Title")
+
+Applying to real dataset:
+
+After applying the pipeline (bootstrapping taken out) to the real dataset, and comparing the result to the author's signatures, I couldn't find very consistent agreements given the number of signatures of 27. This may be due to reasons such as:
+
+
+1. Didn't run enough iterations to reach convergence: I ran the pipeline for about 8 hours, totaling 500 iterations. According to the Cell article, rarely do we need more than 500 iterations to converge; however, this could still be a reason.
+
+2. Ignored bootstrapping caused the algorithm to be stuck on local solutions/implemented bootstrapping wrong. 
+
+To make sure that I am consistent with the Author's implementation, I downloaded and looked over his matlab examples. Here is some observations:
+
+1. Both algorithm successfully extracted Max's sample data signatures.
+2. The sample data given by the example seems to yield different results.
+
+
+1. Although the author's implementation's bootstrapping seems to work, we have the same kind of bootstrap set up and observing the difference of his bootstrap instance with mine doesn't seem to dispute this --> graph here
+
+
+2. By saving the author's bootstrap instances and use them in the result of my pipeline, we seem to still get different results.
+
+3. By saving the author's nmf results and use them in the kmeans part of the pipeline, we get consistent results. The problem seems to be in the different implementations of NMF. 
+
+4. Looking at/using different methods NMF listed in the example, it seems like every NMF produces slightly different results. ---> graph here
+
+
+
