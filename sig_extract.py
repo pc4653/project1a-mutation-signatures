@@ -26,14 +26,14 @@ def bootstrap( M ):
     distribution that Monte Carlos Simluation draws from
     """
     tot_ct_per_ob = M.sum(axis = 0)
-    
+    new_M = np.zeros(M.shape)
     for i in range(len(M)):
         for j in range(len(M[0])):
-            M[i][j] = M[i][j]/float(tot_ct_per_ob[j])
-    M = np.transpose(M)
+            new_M[i][j] = M[i][j]/float(tot_ct_per_ob[j])
+    new_M = np.transpose(new_M)
     bootstrap = []
     for i in range(len(tot_ct_per_ob)):
-        rnd_vec = np.random.multinomial(tot_ct_per_ob[i], M[i])
+        rnd_vec = np.random.multinomial(tot_ct_per_ob[i], new_M[i])
         bootstrap.append(rnd_vec)
             
     bootstrap = np.transpose(np.asarray(bootstrap))        
@@ -58,11 +58,11 @@ def iteration( M, sign_num):
     bootstrap and use NMF (multiplicative update version), random initiation, and 
     normalize P 
     """
-    #M_bootstrap = bootstrap(M)
+    M_bootstrap = bootstrap(M)
     model = NMF(n_components = sign_num, solver = 'mu', max_iter = 10000000, init = 'random')
     #P = np.random.rand(len(M_bootstrap), sign_num)
     #E = np.random.rand(sign_num, len(M_bootstrap[0]))
-    P = model.fit_transform(M)
+    P = model.fit_transform(M_bootstrap)
     E = model.components_
     error = model.reconstruction_err_
     P , E = normalize(P, E)
